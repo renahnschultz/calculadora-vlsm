@@ -1,0 +1,6 @@
+.botao-calcular{
+	-fx-graphic: url('/imagens/pizza.png');
+}
+.botao-recomecar{
+	-fx-graphic: url('/imagens/spaghetti.png');
+}

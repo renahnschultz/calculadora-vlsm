@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="148.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.AlertaController">
+   <children>
+      <Text fx:id="texto" layoutX="9.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="282.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="135.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/alerta.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="63.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#fecharJanela" prefHeight="25.0" prefWidth="175.0" text="Ok, entendi!" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1024.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.PrincipalController">
+   <children>
+      <Label layoutX="14.0" layoutY="78.0" text="IP:" />
+      <TextField id="ipParaCalculo" fx:id="ipParaCalculo" layoutX="54.0" layoutY="74.0" />
+      <Button id="adicionar" layoutX="204.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#adicionarHosts" prefHeight="25.0" prefWidth="25.0" text="+" />
+      <TableView id="hosts" fx:id="hosts" layoutX="245.0" layoutY="104.0" prefHeight="104.0" prefWidth="139.0">
+        <columns>
+          <TableColumn fx:id="qtdHosts" prefWidth="75.0" text="Qtd. Hosts" />
+          <TableColumn fx:id="maisDois" prefWidth="75.0" text="Mais 2" />
+            <TableColumn fx:id="proximaPotencia" prefWidth="75.0" text="Próx. Pot." />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="hostsText" layoutX="55.0" layoutY="115.0" />
+      <Label layoutX="14.0" layoutY="119.0" text="Hosts:" />
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALCULADORA CLASSLESS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#666666" layoutX="101.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemplo: 192.168.0.110">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Button layoutX="54.0" layoutY="146.0" mnemonicParsing="false" onMouseClicked="#realizaCalculo" prefHeight="32.0" prefWidth="149.0" styleClass="botao-calcular" stylesheets="@../../style.css" text="Calcular" />
+      <GridPane layoutX="14.0" layoutY="242.0" prefHeight="184.0" prefWidth="215.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="115.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="IP Base:" />
+            <Label text="IP Base:" GridPane.rowIndex="1" />
+            <Label text="Classe:" GridPane.rowIndex="2" />
+            <Label text="Máscara:" GridPane.rowIndex="3" />
+            <Label text="Máscara:" GridPane.rowIndex="4" />
+            <Label text="Customizada:" GridPane.rowIndex="5" />
+            <Label text="Customizada:" GridPane.rowIndex="6" />
+            <Text fx:id="ipBase" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
+            <Text fx:id="ipBaseBin" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text fx:id="classe" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="mascaraPadrao" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="mascaraPadraoBin" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fx:id="mascaraCustomizada" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="mascaraCustomizadaBin" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados IP informado:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableSubnets" layoutX="399.0" layoutY="104.0" prefHeight="382.0" prefWidth="619.0">
+        <columns>
+          <TableColumn fx:id="numero" editable="false" maxWidth="1000.0" prefWidth="10.0" text="N°" />
+          <TableColumn editable="false" prefWidth="183.0" text="ID Rede">
+               <columns>
+                  <TableColumn fx:id="idRedeSubnet" editable="false" maxWidth="3500.0" prefWidth="75.0" style="-fx-font: 10px Arial;" text="IP" />
+                  <TableColumn fx:id="idRedeBinario" editable="false" maxWidth="10000.0" prefWidth="184.0" style="-fx-font: 10px Arial;" text="Binário" />
+               </columns></TableColumn>
+            <TableColumn editable="false" prefWidth="75.0" text="Broadcast">
+               <columns>
+                  <TableColumn fx:id="broadcastSubnet" editable="false" maxWidth="3500.0" prefWidth="75.0" style="-fx-font: 10px Arial;" text="IP" />
+                  <TableColumn fx:id="broadcastBinario" editable="false" maxWidth="10000.0" prefWidth="184.0" style="-fx-font: 10px Arial;" text="Binário" />
+               </columns></TableColumn>
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Text fontSmoothingType="LCD" layoutX="399.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subnets Possíveis">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#recomecar" prefHeight="32.0" prefWidth="139.0" text="Recomeçar" styleClass="botao-recomecar" stylesheets="@../../style.css" />
+      <Text fontSmoothingType="LCD" layoutX="245.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hosts">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
